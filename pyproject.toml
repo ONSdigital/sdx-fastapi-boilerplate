@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "sdx-fastapi-boilerplate"
-version = "0.0.1"
+version = "0.0.2"
 description = "A boilerplate for a FastAPI service"
 authors = ["Angus <angus.goody@ons.gov.uk>"]
 readme = "README.md"
