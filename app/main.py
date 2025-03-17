@@ -3,6 +3,7 @@ from contextlib import asynccontextmanager
 from fastapi import FastAPI
 import uvicorn
 
+from app.config import SETTINGS
 from app.facades.loggy import Loggy
 from app.routes import router
 
@@ -19,6 +20,9 @@ async def lifespan(_app: FastAPI):
     Loggy.configure_logger()
 
     Loggy.info("Starting sdx-fastapi-boilerplate", logger="uvicorn")
+
+    # Log all the config settings
+    Loggy.info(SETTINGS.get_env_table())
 
     # Run the app
     yield

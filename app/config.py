@@ -2,6 +2,7 @@ from pathlib import Path
 from pydantic import Field
 from pydantic_settings import BaseSettings
 
+from app.facades.loggy import Loggy
 from app.meta.singleton_meta import SingletonMeta
 
 PROJECT_ROOT = Path(__file__).parent.parent
@@ -40,6 +41,13 @@ class AppSettings(metaclass=SingletonMeta):
 
         # Allow project ID to be accessed directly
         self.project_id = env_settings.project_id
+
+    def get_env_table(self) -> str:
+        """
+        Get a formatted table of the environment variables
+        """
+        table = [[key, value] for key, value in self._env_settings.model_dump().items()]
+        return Loggy.format_table("Environment variables", ["Key", "Value"], table)
 
 
 # Load settings
