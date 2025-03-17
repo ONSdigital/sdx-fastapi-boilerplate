@@ -1,9 +1,32 @@
+from contextlib import asynccontextmanager
+
 from fastapi import FastAPI
 import uvicorn
 
+from app.facades.loggy import Loggy
 from app.routes import router
 
-app = FastAPI()
+
+@asynccontextmanager
+async def lifespan(_app: FastAPI):
+    """
+    Defines the lifespan of a FastAPI application,
+    we can use this to run code on startup and shutdown.
+    :param _app: The instance of the FastAPI application.
+    """
+
+    # Configure logging
+    Loggy.configure_logger()
+
+    Loggy.info("Starting sdx-fastapi-boilerplate", logger="uvicorn")
+
+    # Run the app
+    yield
+
+    Loggy.info("Shutting down sdx-fastapi-boilerplate", logger="uvicorn")
+
+
+app = FastAPI(title="sdx-fastapi-boilerplate", lifespan=lifespan)
 app.include_router(router)
 
 
