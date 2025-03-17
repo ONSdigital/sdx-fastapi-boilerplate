@@ -28,6 +28,14 @@ pipx install poetry
 poetry --version
 ```
 
+## Generate `.env`
+
+To use environment variables, you need to create a `.env` file in the root directory of the project. You can copy the `.env.example` file and rename it to `.env`:
+
+```bash
+cp .env.example .env
+```
+
 ## Running the service
 
 ```bash

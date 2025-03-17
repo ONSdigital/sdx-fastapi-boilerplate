@@ -10,7 +10,9 @@ class SingletonMeta(type):
     classes whereas if this was simply a class, the _instances attribute would be shared between the two classes and
     cause unexpected behaviour
 
-    So when inheriting from this class, ensure you inherit using the metaclass keyword
+    So when inheriting from this class, ensure you inherit using the metaclass keyword eg.
+
+    class MyClass(metaclass=SingletonMeta):
     """
 
     _instances = {}
