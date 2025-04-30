@@ -4,28 +4,26 @@ A boilerplate for creating fastapi services
 ## Prerequisites
 
 - Python 3.13
-- Poetry
+- UV (a command line tool for managing Python environments)
 
-### Installing Python 3.13:
+### Installing Python 3.13
 
-If you don't have Python 3.13 installed, you can install it using pyenv. Follow the instructions below to install pyenv and Python 3.13:
+If you don't have Python 3.13 installed, you can install it via brew:
 
 ```bash
-brew install pyenv
-pyenv install 3.13.0
+brew install python@3.13
 ```
 
-### Install Poetry:
-   - This project uses Poetry for dependency management. Ensure Poetry is installed on your system.
-   - If Poetry is not installed, you can install it using:
+### Install UV:
+   - This project uses UV for dependency management. Ensure it is installed on your system.
+   - If UV is not installed, you can install it using:
 ```bash
-brew install pipx
-pipx install poetry
+brew install uv
 ```
-- Use the official Poetry installation guide for other installation methods: https://python-poetry.org/docs/#installation
+- Use the official Poetry installation guide for other installation methods: https://docs.astral.sh/uv/getting-started/installation/
 - Verify the installation by using the following command:
 ```bash
-poetry --version
+uv --version
 ```
 
 ## Generate `.env`
