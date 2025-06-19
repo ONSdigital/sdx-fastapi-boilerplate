@@ -19,7 +19,7 @@ jobs:
 
       - name: Install dependencies using UV
         run: |
-          uv install
+          uv sync
 
       - name: Check version in pyproject.toml
         run: |

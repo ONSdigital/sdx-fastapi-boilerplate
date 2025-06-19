@@ -18,9 +18,10 @@ jobs:
 
       - name: Install dependencies using UV
         run: |
-          uv install
+          uv sync
 
       - name: Run ruff lint
         uses: astral-sh/ruff-action@v3
         run: |
           run ruff check
+
