@@ -120,4 +120,3 @@ class MyClass(metaclass=SingletonMeta):
         pass
 ```
 
-## TUG (Tests, Utilities and Grooming)
