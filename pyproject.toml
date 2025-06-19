@@ -24,4 +24,7 @@ url = "https://europe-west2-python.pkg.dev/ons-sdx-ci/sdx-python-packages/simple
 [dependency-groups]
 dev = [
     "ruff>=0.11.7",
+    "pytest>=8.3.5",
+    "pytest-cov>=6.1.1",
+    "pytest-xdist>=3.6.1"
 ]
