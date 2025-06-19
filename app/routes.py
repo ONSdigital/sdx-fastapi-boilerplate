@@ -1,5 +1,7 @@
 from fastapi import APIRouter
 
+from app.util.get_version import get_app_version
+
 router = APIRouter()
 
 
@@ -11,3 +13,8 @@ async def root():
 @router.get("/health")
 async def health():
     return {"message": "OK"}
+
+
+@router.get("/version")
+async def version():
+    return {"version": get_app_version()}

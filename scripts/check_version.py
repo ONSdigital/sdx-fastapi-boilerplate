@@ -24,7 +24,7 @@ def compare_versions(new_version: str, current_version: str) -> int:
 
 with open("pyproject.toml", "r") as file:
     pyproject = toml.load(file)
-    pr_version = pyproject["tool"]["poetry"]["version"]
+    pr_version = pyproject["project"]["version"]
 
 print(f"PR Version: {pr_version}")
 
@@ -33,7 +33,7 @@ subprocess.run(["git", "checkout", "origin/main"], check=True)
 
 with open("pyproject.toml", "r") as file:
     main_branch_pyproject = toml.load(file)
-    main_version = main_branch_pyproject["tool"]["poetry"]["version"]
+    main_version = main_branch_pyproject["tool"]["poetry"]["version"]   # TODO update this once in Main branch
 
 print(f"Main Branch Version: {main_version}")
 
@@ -54,3 +54,5 @@ else:
     print(
         f"PR version {pr_version} is greater than the main branch version {main_version}."
     )
+
+

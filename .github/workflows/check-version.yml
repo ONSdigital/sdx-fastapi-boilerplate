@@ -6,27 +6,21 @@ on:
       - '*'
 
 jobs:
-  check-version:
+  uv-example:
+    name: Python
     runs-on: ubuntu-latest
 
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v2
+        uses: actions/checkout@v4
 
-      - name: Set up Python
-        uses: actions/setup-python@v2
-        with:
-          python-version: '3.x'
+      - name: Set up UV
+        uses: astral-sh/setup-uv@v5
 
-      - name: Install Poetry Action
-        uses: snok/install-poetry@v1.4.1
-        with:
-          version: 1.8.4
-
-      - name: Install dependencies using Poetry
+      - name: Install dependencies using UV
         run: |
-          poetry install
+          uv sync
 
       - name: Check version in pyproject.toml
         run: |
-          poetry run python scripts/check_version.py
+          uv run python scripts/check_version.py
