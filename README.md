@@ -51,13 +51,25 @@ cp .env.example .env
 ## Running the service
 
 ```bash
-poetry run dev
+make dev
 ```
 
 ## Linting
 
 ```bash
-ruff lint
+make lint
+```
+
+## Formatting
+
+```bash
+make format
+```
+
+## Tests
+
+```bash
+make test
 ```
 
 ## Installed by default
