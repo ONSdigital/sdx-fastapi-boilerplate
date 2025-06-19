@@ -21,7 +21,6 @@ jobs:
           uv sync
 
       - name: Run ruff lint
-        uses: astral-sh/ruff-action@v3
         run: |
           uv run ruff check
 
