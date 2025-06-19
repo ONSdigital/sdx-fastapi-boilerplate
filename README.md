@@ -20,10 +20,24 @@ brew install python@3.13
 ```bash
 brew install uv
 ```
-- Use the official Poetry installation guide for other installation methods: https://docs.astral.sh/uv/getting-started/installation/
+- Use the official UV installation guide for other installation methods: https://docs.astral.sh/uv/getting-started/installation/
 - Verify the installation by using the following command:
 ```bash
 uv --version
+```
+
+### Install dependencies
+
+This command will install all the dependencies required for the project, including development dependencies:
+
+```
+uv sync
+```
+
+If you ever need to update the dependencies, you can run:
+
+```bash
+uv sync --upgrade
 ```
 
 ## Generate `.env`
@@ -105,3 +119,5 @@ class MyClass(metaclass=SingletonMeta):
     def __init__(self):
         pass
 ```
+
+## TUG (Tests, Utilities and Grooming)

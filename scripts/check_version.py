@@ -54,3 +54,5 @@ else:
     print(
         f"PR version {pr_version} is greater than the main branch version {main_version}."
     )
+
+
