@@ -26,3 +26,7 @@ test-parallel:
 	uv sync
 	@echo "Running Unit Tests..."
 	uv run pytest -n auto -v --disable-warnings tests/  --- Uncomment this line to run tests in parallel
+
+start-dev:
+	@echo "Starting development server..."
+	uv run uvicorn app.main:app
