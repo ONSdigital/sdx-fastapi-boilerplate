@@ -23,5 +23,5 @@ jobs:
       - name: Run ruff lint
         uses: astral-sh/ruff-action@v3
         run: |
-          run ruff check
+          uv run ruff check
 
