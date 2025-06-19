@@ -33,7 +33,7 @@ subprocess.run(["git", "checkout", "origin/main"], check=True)
 
 with open("pyproject.toml", "r") as file:
     main_branch_pyproject = toml.load(file)
-    main_version = main_branch_pyproject["tool"]["poetry"]["version"]   # TODO update this once in Main branch
+    main_version = main_branch_pyproject["project"]["version"]   # TODO update this once in Main branch
 
 print(f"Main Branch Version: {main_version}")
 
