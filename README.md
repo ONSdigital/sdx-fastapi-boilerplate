@@ -132,3 +132,10 @@ class MyClass(metaclass=SingletonMeta):
         pass
 ```
 
+## Dockerize
+
+```
+docker build -t myapp .
+```
+
+
