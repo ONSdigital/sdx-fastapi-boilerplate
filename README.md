@@ -11,7 +11,7 @@ A boilerplate for creating fastapi services
 If you don't have Python 3.13 installed, you can install it via brew:
 
 ```bash
-brew install python@3.13
+curl -LsSf https://astral.sh/uv/install.sh | sh
 ```
 
 ### Install UV:
@@ -131,4 +131,11 @@ class MyClass(metaclass=SingletonMeta):
     def __init__(self):
         pass
 ```
+
+## Dockerize
+
+```
+docker build -t myapp .
+```
+
 

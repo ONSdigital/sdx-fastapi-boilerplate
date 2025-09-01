@@ -25,7 +25,7 @@ test-parallel:
 	@echo "Running UV sync..."
 	uv sync
 	@echo "Running Unit Tests..."
-	uv run pytest -n auto -v --disable-warnings tests/  --- Uncomment this line to run tests in parallel
+	uv run pytest -n auto -v --disable-warnings tests/
 
 .PHONY: dev
 dev:
