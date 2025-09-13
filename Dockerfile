@@ -34,4 +34,4 @@ EXPOSE 5000
 # i.e ENTRYPOINT ["python"] + CMD ["python", "run.py"] will result in ENTRYPOINT ["python", "python", "run.py"]
 ENTRYPOINT []
 
-CMD ["uv", "run", "python", "run.py"]
+CMD ["uv", "run", "--no-dev", "run.py"]
