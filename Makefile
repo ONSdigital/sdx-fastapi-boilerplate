@@ -33,3 +33,11 @@ test-parallel:
 dev:
 	@echo "Starting development server..."
 	uv run uvicorn app.main:app
+
+
+.PHONY: increment-version
+increment-version:
+	@echo "🔼 Bumping project version..."
+	uv run python .github/scripts/increment_version.py
+	@echo "🔄 Generating new lock file..."
+	uv sync
