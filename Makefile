@@ -35,8 +35,8 @@ dev:
 	uv run uvicorn app.main:app
 
 
-.PHONY: increment-version
-increment-version:
+.PHONY: increment
+increment:
 	@echo "🔼 Bumping project version..."
 	uv run --only-group version-check python .github/scripts/increment_version.py
 	@echo "🔄 Generating new lock file..."
