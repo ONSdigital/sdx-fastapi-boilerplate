@@ -1,4 +1,4 @@
-name: Check Pyproject Version
+name: Check pyproject.toml version
 
 on:
   pull_request:
@@ -19,4 +19,4 @@ jobs:
 
       - name: Check version in pyproject.toml
         run: |
-          uv run python .github/scripts/check_version.py
+          uv run --only-group version-check python .github/scripts/check_version.py
