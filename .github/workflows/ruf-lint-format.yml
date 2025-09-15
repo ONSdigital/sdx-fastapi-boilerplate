@@ -1,4 +1,4 @@
-name: Ruff Lint and Format
+name: Ruff Lint Check
 
 on:
   pull_request:
@@ -11,16 +11,12 @@ jobs:
 
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v2
+        uses: actions/checkout@v4
 
       - name: Set up UV
-        uses: astral-sh/setup-uv@v5
-
-      - name: Install dependencies using UV
-        run: |
-          uv sync
+        uses: astral-sh/setup-uv@v6
 
       - name: Run ruff lint
         run: |
-          uv run ruff check
+          uv run --only-group lint ruff check
 
