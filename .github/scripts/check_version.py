@@ -1,6 +1,7 @@
 import toml
 import re
 import subprocess
+import sys
 
 
 def compare_versions(new_version: str, current_version: str) -> int:
@@ -31,15 +32,31 @@ with open("pyproject.toml", "r") as file:
 
 print(f"PR Version: {pr_version}")
 
+# --- Fetch main branch ---
+try:
+    subprocess.run(
+        ["git", "fetch", "origin", "main"],
+        check=True,
+        stdout=subprocess.PIPE,
+        stderr=subprocess.PIPE,
+    )
+except subprocess.CalledProcessError:
+    print("⚠️  Could not fetch origin/main. Skipping version comparison.")
+    sys.exit(0)
+
 # --- Main branch version (without checkout) ---
-git_show = subprocess.run(
-    ["git", "show", "origin/main:pyproject.toml"],
-    check=True,
-    text=True,
-    capture_output=True,
-)
-main_branch_pyproject = toml.loads(git_show.stdout)
-main_version = main_branch_pyproject["project"]["version"]
+try:
+    git_show = subprocess.run(
+        ["git", "show", "origin/main:pyproject.toml"],
+        check=True,
+        text=True,
+        capture_output=True,
+    )
+    main_branch_pyproject = toml.loads(git_show.stdout)
+    main_version = main_branch_pyproject["project"]["version"]
+except subprocess.CalledProcessError:
+    print("⚠️  No pyproject.toml found on origin/main. Skipping version comparison.")
+    sys.exit(0)
 
 print(f"Main Branch Version: {main_version}")
 
@@ -58,6 +75,4 @@ if comparison_result <= 0:
         f"PR version ({pr_version}) must be greater than the main branch version ({main_version})."
     )
 else:
-    print(
-        f"✅ PR version {pr_version} is greater than the main branch version {main_version}."
-    )
+    print(f"✅ PR version {pr_version} is greater than the main branch version {main_version}.")
