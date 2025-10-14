@@ -43,6 +43,6 @@ line-length = 121
 exclude = [ "lib", "__pycache__", ".venv",]
 
 [tool.ruff.lint]
-extend-select = [ "E303", "W391", "W292",]
+extend-select = [ "E303", "W391", "W292", "E302"]
 preview = true
 
