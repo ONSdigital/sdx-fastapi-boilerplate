@@ -38,6 +38,6 @@ dev:
 .PHONY: bump
 bump:
 	@echo "🔼 Bumping project version..."
-	uv run --only-group version-check python .github/scripts/increment_version.py
+	uv run --only-group version-check python .github/scripts/bump_version.py
 	@echo "🔄 Generating new lock file..."
 	uv lock
