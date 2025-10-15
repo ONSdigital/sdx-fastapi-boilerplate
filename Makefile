@@ -19,7 +19,7 @@ test:
 	@echo "Running UV sync..."
 	uv sync
 	@echo "Running Unit Tests..."
-	uv run --group test pytest -v --disable-warnings tests/
+	uv run --dev pytest -v --disable-warnings tests/
 
 .PHONY: test-parallel
 test-parallel:
@@ -27,12 +27,12 @@ test-parallel:
 	@echo "Running UV sync..."
 	uv sync
 	@echo "Running Unit Tests..."
-	uv run --group test pytest -n auto -v --disable-warnings tests/
+	uv run --dev pytest -n auto -v --disable-warnings tests/
 
 .PHONY: dev
 dev:
 	@echo "Starting development server..."
-	uv run uvicorn app.main:app
+	uv run run.py
 
 
 .PHONY: bump
