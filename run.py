@@ -16,5 +16,5 @@ if __name__ == '__main__':
     routers = [
         RouterConfig(router=router, prefix="", tx_id_getter=dummy_tx_id_getter)
     ]
-    
+
     run(Settings, proj_root=proj_root, routers=routers)
