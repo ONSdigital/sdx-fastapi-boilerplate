@@ -16,16 +16,11 @@ format:
 
 .PHONY: test
 test:
-	@echo "Running UV sync..."
-	uv sync
 	@echo "Running Unit Tests..."
 	uv run --dev pytest -v --disable-warnings tests/
 
 .PHONY: test-parallel
 test-parallel:
-	@echo "Running Unit Tests in parallel..."
-	@echo "Running UV sync..."
-	uv sync
 	@echo "Running Unit Tests..."
 	uv run --dev pytest -n auto -v --disable-warnings tests/
 
