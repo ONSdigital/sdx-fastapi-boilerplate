@@ -26,8 +26,8 @@ lint = [
 ]
 
 version-check = [
- "toml>=0.10.2",
- "tomlkit>=0.13.3",
+    "toml>=0.10.2",
+    "tomlkit>=0.13.3",
 ]
 
 [tool.uv.sources]
@@ -40,9 +40,9 @@ url = "https://europe-west2-python.pkg.dev/ons-sdx-ci/sdx-python-packages/simple
 
 [tool.ruff]
 line-length = 121
-exclude = [ "lib", "__pycache__", ".venv",]
+exclude = ["lib", "__pycache__", ".venv", ]
 
 [tool.ruff.lint]
-extend-select = [ "E303", "W391", "W292", "E302"]
+extend-select = ["E303", "W391", "W292", "E302"]
 preview = true
 
