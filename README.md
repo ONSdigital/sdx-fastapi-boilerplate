@@ -1,4 +1,7 @@
 # sdx-fastapi-boilerplate
+
+![Version](https://ons-badges-752336435892.europe-west2.run.app/api/badge/custom?left=Python&right=3.13)
+
 A boilerplate for creating fastapi services
 
 ## Prerequisites
@@ -21,7 +24,7 @@ brew install python@3.13
 
 curl -LsSf https://astral.sh/uv/install.sh | sh
 
-OR 
+OR
 
 brew install uv
 ```
